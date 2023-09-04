@@ -1,0 +1,23 @@
+{
+  "name": "middle.messenger.praktikum.yandex",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite ",
+    "start": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "Kazanskaya Julia",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "pug": "^3.0.2",
+    "sass": "^1.66.1",
+    "vite": "^4.4.9",
+    "vite-plugin-pug": "^0.3.2"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}
