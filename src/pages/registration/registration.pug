@@ -11,14 +11,14 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         title Вход
     body.modal.modal_theme_reg
-        form.form.form__registration(name='registration' novalidate)
-            h3.form__title Давайте познакомимся!
-            fieldset.form__input-box.form.form__title
-                each field in fieldList
-                    input.form__field.form__field_text(class=field.class, type=field.type, name=field.name, placeholder=field.placeholder, required, minlength=minlengthValue, maxlength=maxlengthValue, pattern=field.pattern, autocomplete='off')
-                    span.error-message(name=field.span)
-            a.form__button-link(title='Регистрация' href='../chats/chats.html')
-                input.form__field.form__field_button(type='submit' value='Регистрация' name='Регистрация' disabled)
-        a.modal__return-link(title='Войти' href='../login/login.html') Войти
-        script(src='./registration.js' type='module')
+        main.modal
+            form.form.form__registration(name='registration' novalidate)
+                h3.form__title Давайте познакомимся!
+                fieldset.form__input-box.form.form__title
+                    each field in fieldList
+                        input.form__field.form__field_text(class=field.class, type=field.type, name=field.name, placeholder=field.placeholder, required, minlength=minlengthValue, maxlength=maxlengthValue, pattern=field.pattern, autocomplete='off')
+                        span.error-message(name=field.span)
+                a.form__button-link(title='Регистрация' href='../chats/chats.html')
+                    input.form__field.form__field_button(type='submit' value='Регистрация' name='Регистрация' disabled)
+            a.modal__return-link(title='Войти' href='../login/login.html') Войти
     script(type='module' src='./registration.js')
