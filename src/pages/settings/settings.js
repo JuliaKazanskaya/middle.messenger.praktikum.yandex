@@ -1,7 +1,14 @@
 import {handleValidate} from '/src/modules/handleValidate';
 import './settings.sass'
+import {checkPasswordMatch} from "../../modules/checkPasswordMatch";
 
-const inputForm = document.forms.auth;
+const settingsForm = document.forms.settings;
 
-inputForm.elements.login.addEventListener('click', handleValidate);
-inputForm.elements.password.addEventListener('click', handleValidate);
+for (let key in settingsForm.elements) {
+    if (settingsForm.elements[key].type !== 'submit' && settingsForm.elements[key].type !== 'reset' && settingsForm.elements[key].type !== 'file' && settingsForm.elements[key].localName === 'input') {
+        settingsForm.elements[key].addEventListener('change', handleValidate);
+    }
+    if (settingsForm.elements[key].name === 'password-repeat') {
+        settingsForm.elements[key].addEventListener('change', checkPasswordMatch);
+    }
+}

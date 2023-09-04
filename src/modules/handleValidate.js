@@ -7,7 +7,7 @@ export const handleValidate = (element) => {
     let errorElement = getErrorSpan(element);
     let tempElement = element.target.validity;
     const errorMessageText = errorMessage;
-console.log(tempElement);
+
     if (!tempElement.valid) {
         errorElement.classList.add('error_invalid');
         errorElement.classList.remove('error-message');

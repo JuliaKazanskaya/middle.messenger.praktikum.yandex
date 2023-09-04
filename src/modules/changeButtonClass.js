@@ -2,7 +2,7 @@ export const changeButtonClass = (event) => {
     let formClassList = [...event.target.form.classList];
     let inputs;
     formClassList.forEach(item => {
-        if (item.match('form__auth') || item.match('form__registration') || item.match('form__settings')) {
+        if (item.match('form__auth') || item.match('form__registration') || item.match('form__userSettings')) {
             inputs = Array.from(event.target.closest(`.${item}`).elements);
         }
     });
