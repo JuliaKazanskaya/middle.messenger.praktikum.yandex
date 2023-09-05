@@ -1,6 +1,6 @@
 import {handleValidate} from '/src/modules/handleValidate';
 import './settings.sass'
-import {checkPasswordMatch} from "../../modules/checkPasswordMatch";
+import {checkPasswordMatch} from "/src/modules/checkPasswordMatch";
 
 const settingsForm = document.forms.settings;
 

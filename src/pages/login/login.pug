@@ -18,7 +18,7 @@ html(lang='ru')
                     each field in fieldList
                         input.form__field.form__field_text(class=field.class, type=field.type, name=field.name, placeholder=field.placeholder, required, minlength=minlengthValue, maxlength=maxlengthValue, pattern=field.pattern, autocomplete='on')
                         span.error-message(name=field.span)
-                a.form__button-link(title='Регистрация' href='../chats/chats.html')
+                a.form__button-link(title='Регистрация' href='/src/pages/chats/chats.html')
                     input.form__field.form__field_button.button_inactive(type='submit' value='Вход' name='Вход' disabled)
-            a.modal__return-link(title='Нет аккаунта?' href='../registration/registration.html') Нет аккаунта?
+            a.modal__return-link(title='Нет аккаунта?' href='/src/pages/registration/registration.html') Нет аккаунта?
     script(src='./login.js' type='module')

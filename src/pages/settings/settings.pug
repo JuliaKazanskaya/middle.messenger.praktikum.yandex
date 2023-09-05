@@ -18,7 +18,7 @@ html(lang='ru')
                     figure.avatar
                         img.avatar__img(src='https://avatars.githubusercontent.com/u/52495622?s=96&v=4' alt='avatar')
                         figcaption.avatar__figcaption
-                            img.avatar__logo(src='../../../static/camera.svg')
+                            img.avatar__logo(src='/static/camera.svg')
                     each field in fieldList
                         input.form__field.form__field_text(class=field.class, type=field.type, name=field.name, placeholder=field.placeholder, required, minlength=minlengthValue, maxlength=maxlengthValue, pattern=field.pattern, autocomplete='off')
                         span.error-message(name=field.span)
