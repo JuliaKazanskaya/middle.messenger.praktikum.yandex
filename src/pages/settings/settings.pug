@@ -1,0 +1,27 @@
+- const minlengthValue = 2
+- const maxlengthValue = 32
+
+- let fieldList = [{class: 'form__email', type: 'email', name: 'email', placeholder: 'Почта',pattern: '[0-9A-z._\\-%+]+@[0-9A-z._\\-%+]+.[a-z]{2,5}', span: 'error-email'},{ class: 'form__login', type: 'text', name: 'login', placeholder: 'Логин', span: 'error-login' },{ class: 'form__first-name', type: 'text', name: 'first_name', placeholder: 'Имя', span: 'error-first-name' },{ class: 'form__second-name', type: 'text', name: 'second_name', placeholder: 'Фамилия', span: 'error-second-name' },{ class: 'form__phone', type: 'tel', name: 'phone', placeholder: 'Телефон', pattern: '(\\+7|8)[0-9]{10}', span: 'error-phone' },{ class: 'form__password', type: 'password', name: 'password', placeholder: 'Пароль', span: 'error-password' },{ class: 'form__password-repeat', type: 'password', name: 'password-repeat', placeholder: 'Повторите пароль', span: 'error-password-repeat' }];
+
+doctype html
+html(lang='ru')
+    head
+        meta(charset='UTF-8')
+        link(rel='icon' type='image/svg+xml' href='/static/favicon.ico')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Вход
+    body.modal.modal_theme_settings
+        main.modal
+            form.form.form__settings.form__userSettings(name='settings' novalidate)
+                .form__input-box.form.form__settings
+                    input.form__field.form__field_image(type='file' name='avatar' placeholder='Аватар')
+                    figure.avatar
+                        img.avatar__img(src='https://avatars.githubusercontent.com/u/52495622?s=96&v=4' alt='avatar')
+                        figcaption.avatar__figcaption
+                            img.avatar__logo(src='/static/camera.svg')
+                    each field in fieldList
+                        input.form__field.form__field_text(class=field.class, type=field.type, name=field.name, placeholder=field.placeholder, required, minlength=minlengthValue, maxlength=maxlengthValue, pattern=field.pattern, autocomplete='off')
+                        span.error-message(name=field.span)
+                input.form__field.form__field_button(type='button' value='Сохранить' name='Сохранить')
+                input.form__field.form__field_button.form__field_button_reset(type='reset' value='Отмена' name='Отмена')
+    script(type='module' src='./settings.js')
