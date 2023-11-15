@@ -47,10 +47,10 @@ npm run start
 После локального запуска сервера вы можете просмотреть все страницы по следующим адресам:
 
 - Основная страница: [http://localhost:3000/](http://localhost:3000/)
-- Страница входа: [http://localhost:3000/src/pages/login/login.html](http://localhost:3000/src/pages/login/login.html)
-- Страница регистрации: [http://localhost:3000/src/pages/registration/registration.html](http://localhost:3000/src/pages/registration/registration.html)
-- Страница ошибки 404: [http://localhost:3000/src/pages/errors/error_404/error_404.html](http://localhost:3000/src/pages/errors/error_404/error_404.html)
-- Страница ошибки 500: [http://localhost:3000/src/pages/errors/error_500/error_500.html](http://localhost:3000/src/pages/errors/error_500/error_500.html)
-- Страница настроек: [http://localhost:3000/src/pages/settings/settings.html](http://localhost:3000/src/pages/settings/settings.html)
+- Страница входа: [http://localhost:3000/src/pages/login.html](http://localhost:3000/src/pages/login.html)
+- Страница регистрации: [http://localhost:3000/src/pages/registration.html](http://localhost:3000/src/pages/registration.html)
+- Страница ошибки 404: [http://localhost:3000/src/pages/errors/error_404.html](http://localhost:3000/src/pages/errors/error_404.html)
+- Страница ошибки 500: [http://localhost:3000/src/pages/errors/error_500.html](http://localhost:3000/src/pages/errors/error_500.html)
+- Страница настроек: [http://localhost:3000/src/pages/settings.html](http://localhost:3000/src/pages/settings.html)
 
 Пожалуйста, обратите внимание, что страницы могут быть недоступны, если сервер не запущен.
