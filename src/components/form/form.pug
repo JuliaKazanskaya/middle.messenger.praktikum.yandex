@@ -1,0 +1,7 @@
+form.form(class=classList, name=nameValue)
+    h3.form__title #{ textValue }
+    .form__input-box
+        each item in fieldList
+            input.form__field(class=item.class, type=item.type, name=item.name, placeholder=item.placeholder)
+            span.error-message(name=item.span)
+        != formButton

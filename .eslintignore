@@ -1,0 +1,7 @@
+**/*.pug
+**/*.scss
+**/*.html
+/node_modules
+/dist
+/.github
+/.cache

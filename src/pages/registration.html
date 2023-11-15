@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+  </head>
+  <body class="modal modal_theme_reg">
+    <main class="modal">
+      <form class="form form__registration" name="registration" novalidate>
+        <h3 class="form__title">Давайте познакомимся!</h3>
+        <fieldset class="form__input-box">
+          <input class="form__field form__email" type="email" name="email" placeholder="Почта" required minlength="2" maxlength="32" pattern="[0-9A-z._\-%+]+@[0-9A-z._\-%+]+.[a-z]{2,5}" autocomplete="off"><span class="error-message" name="error-email"></span>
+          <input class="form__field form__login" type="text" name="login" placeholder="Логин" required minlength="2" maxlength="32" autocomplete="off"><span class="error-message" name="error-login"></span>
+          <input class="form__field form__first-name" type="text" name="first_name" placeholder="Имя" required minlength="2" maxlength="32" autocomplete="off"><span class="error-message" name="error-first-name"></span>
+          <input class="form__field form__second-name" type="text" name="second_name" placeholder="Фамилия" required minlength="2" maxlength="32" autocomplete="off"><span class="error-message" name="error-second-name"></span>
+          <input class="form__field form__phone" type="tel" name="phone" placeholder="Телефон" required minlength="2" maxlength="32" pattern="(\+7|8)[0-9]{10}" autocomplete="off"><span class="error-message" name="error-phone"></span>
+          <input class="form__field form__password" type="password" name="password" placeholder="Пароль" required minlength="2" maxlength="32" autocomplete="off"><span class="error-message" name="error-password"></span>
+          <input class="form__field form__password-repeat" type="password" name="password-repeat" placeholder="Повторите пароль" required minlength="2" maxlength="32" autocomplete="off"><span class="error-message" name="error-password-repeat"></span>
+        </fieldset>
+        <button class="button button_submit button_size_big" type="submit" disabled>Регистрация</button>
+      </form><a class="modal__return-link" title="Войти" href="/src/pages/login.html">Войти</a>
+    </main>
+  </body>
+  <script type="module" src="./registration/registration.ts"></script>
+</html>

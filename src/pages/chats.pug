@@ -1,0 +1,43 @@
+- let chatList = [{userName: 'Alex', userPic: 'https://shapka-youtube.ru/wp-content/uploads/2022/06/ava-kot-iz-shreka.jpg', lastMessage: 'How are you?', active: false}, {userName: 'Barbie', userPic: 'https://shapka-youtube.ru/wp-content/uploads/2022/06/ava-kot-iz-shreka.jpg', lastMessage: 'Hello!', active: true}]
+
+doctype html
+html(lang='ru')
+    head
+        meta(charset='UTF-8')
+        link(rel='icon' type='image/svg+xml' href='/static/favicon.ico')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Чаты
+    body.modal.modal_theme_chat
+        main.modal
+            div.blockChats
+                div.blockChats__list
+                    input.blockChats__search(type='text', name='search', placeholder='Поиск')
+                    each field in chatList
+                        if field.active
+                            div.blockChats__chat.blockChats__chat_active
+                                figure.avatar.avatar_size_small
+                                    img.avatar__img.avatar__img_size_small(src=field.userPic alt='avatar')
+                                    figcaption.avatar__figcaption
+                                        img.avatar__logo.avatar__logo_size_small(src='/static/camera.svg')
+                                div.blockChats__preview
+                                    h6.blockChats__preview_title #{field.userName}
+                                    p.blockChats__preview_text #{field.lastMessage}
+                        else
+                            div.blockChats__chat
+                                figure.avatar.avatar_size_small
+                                    img.avatar__img.avatar__img_size_small(src=field.userPic alt='avatar')
+                                    figcaption.avatar__figcaption
+                                        img.avatar__logo.avatar__logo_size_small(src='/static/camera.svg')
+                                div.blockChats__preview
+                                    h6.blockChats__preview_title #{field.userName}
+                                    p.blockChats__preview_text #{field.lastMessage}
+                div.blockChats__text
+                    div.messages
+                        p.messages__text.messages__your.blockChats__search Привет. Как ты там поживаешь? Как погода? Как дела?
+                        p.messages__text.messages__toYou.blockChats__search Добрый! Все хорошо. Сам как? Погода нынче отличная. Зима обещает быть снежной.
+                    div.messages__divider
+                    div.messages__inputForm
+                        textarea.message__input.blockChats__search(placeholder='Ваше сообщение', rows=3)
+                        button.button.button_add(type='button') +
+
+    script(type='module' src='./chats/chats.ts')

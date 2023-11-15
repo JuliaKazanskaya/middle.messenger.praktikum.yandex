@@ -1,11 +1,20 @@
 @import url(./_text/form__field_text.sass)
-@import url(./_button/form__field_button.sass)
-@import url(./_button_reset/form__field_button_reset.sass)
 @import url(./_image/form__field_image.sass)
 
 $size: 100%
+$color_blue: #3369F3
+$color_white: #f9f9f9
 
 .form__field
   display: block
   height: 1.5em
   width: $size
+  border-top: none
+  border-left: none
+  border-right: none
+  border-bottom: 2px solid $color_blue
+  background-color: $color_white
+  padding: 10px
+  margin: 10px
+  box-sizing: border-box
+  max-width: 300px
