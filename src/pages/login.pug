@@ -16,8 +16,8 @@ html(lang='ru')
                 h3.form__title Авторизация
                 .form__input-box
                     each field in fieldList
-                        input.form__field(class=field.class, type=field.type, name=field.name, placeholder=field.placeholder, required, minlength=minlengthValue, maxlength=maxlengthValue, pattern=field.pattern, autocomplete='on')
-                        span.error-message(name=field.span)
+                        input.input-form(class=field.class, type=field.type, name=field.name, placeholder=field.placeholder, required, minlength=minlengthValue, maxlength=maxlengthValue, pattern=field.pattern, autocomplete='on')
+                        span.error-message(id=field.span)
                 button.button.button_submit.button_size_big(type='submit' title='Вход' disabled) Вход
             a.modal__return-link(title='Нет аккаунта?' href='/src/pages/registration.html') Нет аккаунта?
     script(src='./login/login.ts' type='module')

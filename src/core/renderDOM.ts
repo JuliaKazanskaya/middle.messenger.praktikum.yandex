@@ -1,12 +1,12 @@
 import Block from './block';
 
 export function renderDOM(rootSelector: string, component: Block) {
-    const root = document.querySelector(rootSelector);
-    if (!root) throw new Error('Root not found');
+  const root = document.querySelector(rootSelector);
+  if (!root) throw new Error('Root not found');
 
-    component.dispatchComponentDidMount();
+  component.dispatchComponentDidMount();
 
-    root.innerHTML = '';
+  root.innerHTML = '';
 
-    root.append(component.getContent()!);
+  root.append(component.getContent()!);
 }

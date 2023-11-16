@@ -1,3 +1,6 @@
+-const linkList = [{url: '/src/pages/chats.html', title: 'Чаты'}, {url: '/src/pages/error_404.html', title: '404'},{url: '/src/pages/error_500.html', title: '500'},{url: '/src/pages/login.html', title: 'Логин'}, {url: '/src/pages/registration.html', title: 'Регистрация'}, {url: '/src/pages/settings.html', title: 'Настройки'}]
+
+
 doctype html
 html(lang='ru')
     head
@@ -6,20 +9,14 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         title Who Are You?
     body.entry-page
-        main.modal
-            #app
-                nav
-                    ul.test
-                        li.test
-                            a.test(href='/src/pages/chats.html' title='Чаты') Чаты
-                        li.test
-                            a.test(href='/src/pages/error_404.html' title='404') 404
-                        li.test
-                            a.test(href='/src/pages/error_500.html' title='500') 500
-                        li.test
-                            a.test(href='/src/pages/login.html' title='Логин') Логин
-                        li.test
-                            a.test(href='/src/pages/registration.html' title='Регистрация') Регистрация
-                        li.test
-                            a.test(href='/src/pages/settings.html' title='Настройки') Настройки
+        main.modal(id="#app")
+            h1.entry-page__title Who Are You?
+            .entry-page__buttons
+                a.entry-page__button(href='/src/pages/login.html' title='Вход') ВХОД
+                a.entry-page__button(href='/src/pages/registration.html' title='Регистрация') РЕГИСТРАЦИЯ
+            nav
+                each item in linkList
+                    ul.navigation
+                        li.navigation
+                            a(href=item.url) #{item.title}
     script(type='module' src='src/pages/index/index.ts')

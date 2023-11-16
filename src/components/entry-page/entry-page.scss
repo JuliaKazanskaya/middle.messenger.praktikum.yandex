@@ -1,0 +1,54 @@
+$size: 100%;
+
+.entry-page {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 150px 0 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: $size;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+
+  $size: 100%;
+
+  &__button {
+    text-decoration: none;
+    color: #1a1a1a;
+    height: 9em;
+    width: 9em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+
+    &:hover {
+      background: #82BFAB;
+      clip-path: circle(calc($size / 2));
+  }
+}
+
+  $size: 100%;
+
+  &__buttons {
+    background-image: url('/static/whoAreYou.svg');
+    background-repeat: no-repeat;
+    background-size: $size;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+  &__title {
+    font-size: 3em;
+    max-width: 500px;
+    margin: 0 0 100px;
+}
+}

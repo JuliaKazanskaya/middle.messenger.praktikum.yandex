@@ -1,0 +1,13 @@
+.chat-message {
+  display: block;
+  margin: 0.3rem;
+  background-color: rgb(255 255 255 / 50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px #f9f9f9 solid;
+  padding: 0.3rem;
+
+  &__your {
+    background-color: rgb(129 129 255 / 50%);
+}
+}

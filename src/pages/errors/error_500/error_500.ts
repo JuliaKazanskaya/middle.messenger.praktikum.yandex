@@ -1,1 +1,1 @@
-import './error_500.sass'
+import './error_500.scss';

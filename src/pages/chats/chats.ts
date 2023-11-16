@@ -1,1 +1,1 @@
-import './chats.sass'
+import './chats.scss';

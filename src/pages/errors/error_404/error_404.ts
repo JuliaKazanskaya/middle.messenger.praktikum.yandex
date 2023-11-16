@@ -1,1 +1,1 @@
-import './error_404.sass'
+import './error_404.scss';

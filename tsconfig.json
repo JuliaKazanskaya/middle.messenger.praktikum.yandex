@@ -1,27 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "useDefineForClassFields": true,
-    "module": "ES6",
-    "lib": ["ES6", "DOM"],
-    "moduleResolution": "Node",
-    "strict": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "noEmit": true,
+    "outDir": "dist",
+    "target": "es2020",
+    "module": "commonjs",
+    "declaration": false,
+    "sourceMap": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "sourceMap": true,
-    "strictNullChecks": true,
-    "skipLibCheck": true,
-    "typeRoots": [
-      "./src/@types",
-      "./node_modules/@types"
-    ]
-  },
-  "include": ["./src"],
-  "exclude": ["./dist"]
+    "strictNullChecks": true
+  }
 }

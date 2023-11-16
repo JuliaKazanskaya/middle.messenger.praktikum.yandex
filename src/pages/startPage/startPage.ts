@@ -1,9 +1,9 @@
-import Block from "../../core/block";
-import template from "../startPage/startPage.pug";
-import '../index/index.sass';
+import Block from '../../core/block';
+import template from './startPage.pug';
+import '../index/index.scss';
 
-export default class startPage extends Block {
-    render() {
-        return this.compile(template, {});
-    }
+export default class StartPage extends Block {
+  render() {
+    return this.compile(template, {});
+  }
 }
