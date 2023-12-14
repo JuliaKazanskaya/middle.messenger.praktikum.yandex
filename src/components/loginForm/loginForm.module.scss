@@ -1,0 +1,42 @@
+@import '../button/button.module';
+@import '../input/input.module';
+@import '../form/form.module';
+@import '../error/error.module';
+@import '/src/styles/modal.module';
+
+
+$blue: #3369F3;
+$white: #f9f9f9;
+$size: 100%;
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 350px;
+  max-width: 350px;
+
+  &__title {
+    margin: 0 0 1.5em;
+    color: $white;
+  }
+
+  &__settings {
+    background-color: transparent;
+  }
+
+  &__inputBox {
+    background-color: $white;
+    border: 2px solid $blue;
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: $size;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

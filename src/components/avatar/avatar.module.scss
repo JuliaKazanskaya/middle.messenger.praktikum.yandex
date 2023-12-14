@@ -1,0 +1,64 @@
+.avatar {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  margin: 0;
+
+  $size: 100%;
+
+  &__figcaption {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: $size;
+    opacity: 0;
+    background-color: rgb(0 0 0 / 0%);
+    transition: all ease-in-out 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover {
+      opacity: 1;
+      background-color: rgb(0 0 0 / 50%);
+    }
+  }
+
+  &__img {
+    cursor: pointer;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    transition: all ease-in 0.5s;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    &:hover {
+      box-shadow: 0 2px 2px 0 rgb(0 0 0 / 50%);
+    }
+
+    &_size_big {
+      $size: 150px;
+
+      width: $size;
+      height: $size;
+    }
+
+    &_size_small {
+      $size: 50px;
+
+      width: $size;
+      height: $size;
+    }
+  }
+
+  &__logo {
+    color: #f9f9f9;
+    margin: auto;
+  }
+}
