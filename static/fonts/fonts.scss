@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Shentox';
+  src: url("/static/fonts/Shentox.ttf") format("truetype");
+  font-size: 20px;
+  font-weight: 300;
+}
+
+* {
+  font-family: "Shentox", system-ui;
+  font-weight: 600;
+  font-size: 20px;
+}
+*:focus {
+  outline: none;
+}

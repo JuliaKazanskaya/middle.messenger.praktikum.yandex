@@ -1,21 +1,18 @@
+@import '../../../static/fonts/fonts';
+@import '../../styles/modal.module';
+
+
 $size: 100%;
 
-.entry-page {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 150px 0 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: $size;
-  box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
+.navigation {
+  display: inline-block;
+  margin: 5px;
+  max-height: 19em;
+  max-width: 19em;
+  font-size: 4.5em;
+}
 
-  $size: 100%;
-
+.entry {
   &__button {
     text-decoration: none;
     color: #1a1a1a;
@@ -30,10 +27,8 @@ $size: 100%;
     &:hover {
       background: #82BFAB;
       clip-path: circle(calc($size / 2));
+    }
   }
-}
-
-  $size: 100%;
 
   &__buttons {
     background-image: url('/static/whoAreYou.svg');
@@ -44,11 +39,11 @@ $size: 100%;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-}
+  }
 
   &__title {
     font-size: 3em;
     max-width: 500px;
     margin: 0 0 100px;
-}
+  }
 }

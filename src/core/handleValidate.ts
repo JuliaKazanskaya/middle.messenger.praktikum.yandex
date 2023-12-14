@@ -1,40 +1,44 @@
-import { changeButtonClass } from './changeButtonClass';
-import { getErrorSpan } from '../components/error/getErrorSpan';
-import { errorMessage } from '../components/error/errorMessage';
+import { changeButtonClass } from './changeButtonClass.ts';
+
+const errorMessage = {
+  requiredText: 'Это обязательное поле',
+  lengthText: 'Должно быть от 3 до 20 символов',
+  typeMismatch: 'Неверный формат',
+  mismatchedPassword: 'Пароли не совпадают',
+  another: 'Ошибка',
+};
 
 export const handleValidate = (event: Event): boolean => {
   changeButtonClass(event);
 
-  let errorElement: HTMLElement = getErrorSpan(event.target as HTMLElement);
-  let tempElement = (event.target as HTMLInputElement).validity;
+  const errorElement: HTMLInputElement = event.target as HTMLInputElement;
+  const errorSpan: HTMLElement = document.querySelector(`span[id=${errorElement.name}]`) as HTMLElement;
+
   const errorMessageText = errorMessage;
-  if (!tempElement.valid) {
-    errorElement.classList.add('error-message_invalid');
-    errorElement.classList.remove('error-message');
+  if (!errorElement.validity.valid) {
+    errorSpan.style.display = 'block';
     switch (true) {
-      case tempElement.valueMissing:
-        errorElement.textContent = errorMessageText.requiredText;
+      case errorElement.validity.valueMissing:
+        errorSpan.textContent = errorMessageText.requiredText;
         break;
-      case tempElement.tooShort || tempElement.tooLong:
-        errorElement.textContent = errorMessageText.lengthText;
+      case errorElement.validity.tooShort || errorElement.validity.tooLong:
+        errorSpan.textContent = errorMessageText.lengthText;
         break;
-      case tempElement.patternMismatch:
-        errorElement.textContent = errorMessageText.typeMismatch;
+      case errorElement.validity.patternMismatch:
+        errorSpan.textContent = errorMessageText.typeMismatch;
         break;
       default:
         errorElement.textContent = errorMessageText.another;
         break;
     }
   } else {
-    errorElement.classList.remove('error-message_invalid');
-    errorElement.classList.add('error-message');
-    errorElement.textContent = '';
+    errorSpan.style.display = 'none';
+    errorSpan.textContent = '';
     return false;
   }
 
-  errorElement.style.top =
-      (event.target as HTMLElement).offsetTop +
-      (event.target as HTMLElement).clientHeight + 2 + 'px';
+  errorSpan.style.top = `${(event.target as HTMLElement).offsetTop
+    + (event.target as HTMLElement).clientHeight + 2}px`;
 
   return true;
 };
