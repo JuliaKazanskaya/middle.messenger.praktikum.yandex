@@ -2,22 +2,43 @@
   "name": "middle.messenger.praktikum.yandex",
   "version": "1.0.0",
   "description": "---",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "dev": "vite ",
+    "dev": "vite",
     "start": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src/**/**/*.ts ",
+    "lint:fix": "eslint --fix src/**/**/*.ts",
+    "stylelint": "stylelint src/**/**/*.scss",
+    "stylelint:fix": "stylelint --fix src/**/**/*.scss"
   },
   "author": "Kazanskaya Julia",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "eslint": "^8.50.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "eslint-plugin-typescript-sort-keys": "^3.0.0",
     "express": "^4.18.2",
-    "pug": "^3.0.2",
-    "sass": "^1.66.1",
-    "vite": "^4.4.9",
-    "vite-plugin-pug": "^0.3.2"
+    "sass": "^1.69.5",
+    "scss": "^0.2.4",
+    "stylelint": "^15.10.3",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "stylelint-order": "^6.0.3",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.5",
+    "vite-plugin-checker": "^0.6.2",
+    "vite-plugin-css-modules": "^0.0.1"
   },
   "dependencies": {
-    "path": "^0.12.7"
+    "@types/uuid": "^9.0.5",
+    "handlebars": "^4.7.8",
+    "terser": "^5.24.0",
+    "uuid": "^9.0.1"
   }
 }
