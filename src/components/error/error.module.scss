@@ -1,0 +1,11 @@
+.error {
+  display: none;
+  transition: 0.3s;
+  opacity: 1;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #f00;
+  position: absolute;
+}
