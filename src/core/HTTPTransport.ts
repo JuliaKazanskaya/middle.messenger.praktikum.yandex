@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const METHODS = {
   GET: 'GET',
   POST: 'POST',
@@ -21,13 +22,9 @@ function queryStringify(data: Record<string, any>): string {
   return `?${params.join('&')}`;
 }
 
-class HTTPTransport {
+export class HTTPTransport {
   request = (url: string, options: { data?: any, headers?: Record<string, string>, method: HttpMethod } = { method: METHODS.GET }, timeout = 5000): Promise<XMLHttpRequest> => {
     const { data, headers = {}, method } = options;
-
-    if (!method) {
-      return Promise.reject('No method');
-    }
 
     const xhr = new XMLHttpRequest();
     const isGet = method === METHODS.GET;

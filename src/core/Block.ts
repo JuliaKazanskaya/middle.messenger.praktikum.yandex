@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { v4 as uuidv4 } from 'uuid';
 import Handlebars from 'handlebars';
 import { EventBus } from './EventBus.ts';
-
+// Не получилось типизировать
+// class Block<P extends Record<string, unknown> = unknown> {
 class Block<P extends Record<string, any> = any> {
   static EVENTS = {
     INIT: 'init',
@@ -14,12 +16,13 @@ class Block<P extends Record<string, any> = any> {
 
   protected props: P;
 
+  // Не получилось типизировать иначе
   // eslint-disable-next-line no-use-before-define
   public children: Record<string, Block | Block[]>;
 
   private eventBus: () => EventBus;
 
-  private _element: HTMLElement | null = null;
+  _element: HTMLElement | null = null;
 
   private readonly _meta: { props: P; tagName: string };
 
@@ -87,7 +90,7 @@ class Block<P extends Record<string, any> = any> {
     this._element = this._createDocumentElement(tagName);
   }
 
-  private _init() {
+  _init() {
     this._createResources();
 
     this.init();
@@ -114,7 +117,7 @@ class Block<P extends Record<string, any> = any> {
     });
   }
 
-  private _componentDidUpdate() {
+  _componentDidUpdate() {
     if (this.componentDidUpdate()) {
       this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
     }
@@ -136,7 +139,7 @@ class Block<P extends Record<string, any> = any> {
     return this._element;
   }
 
-  private _render() {
+  _render() {
     const fragment = this.render();
     this._removeEvents();
     this._element!.innerHTML = '';
@@ -147,6 +150,8 @@ class Block<P extends Record<string, any> = any> {
   }
 
   protected compile(template: string) {
+    // Не получилось типизировать
+    // const contextAndStubs = { ...this.props } as Record<string, unknown>;
     const contextAndStubs = { ...this.props } as Record<string, any>;
     Object.entries(this.children).forEach(([name, component]) => {
       if (Array.isArray(component)) {
@@ -160,7 +165,8 @@ class Block<P extends Record<string, any> = any> {
     const temp = document.createElement('template');
     temp.innerHTML = html;
 
-    Object.entries(this.children).forEach(([_, component]) => {
+    Object.entries(this.children).forEach(([property, component]) => {
+      if (property.startsWith('_')) return;
       if (Array.isArray(component)) {
         const stubs = component.map((comp) => temp.content.querySelector(`[data-id="${comp.id}"]`));
         if (!stubs.length) {
