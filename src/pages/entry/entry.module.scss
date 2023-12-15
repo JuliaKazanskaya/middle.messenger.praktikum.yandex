@@ -1,0 +1,49 @@
+@import '../../../static/fonts/fonts';
+@import '../../styles/modal.module';
+
+
+$size: 100%;
+
+.navigation {
+  display: inline-block;
+  margin: 5px;
+  max-height: 19em;
+  max-width: 19em;
+  font-size: 4.5em;
+}
+
+.entry {
+  &__button {
+    text-decoration: none;
+    color: #1a1a1a;
+    height: 9em;
+    width: 9em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+
+    &:hover {
+      background: #82BFAB;
+      clip-path: circle(calc($size / 2));
+    }
+  }
+
+  &__buttons {
+    background-image: url('/static/whoAreYou.svg');
+    background-repeat: no-repeat;
+    background-size: $size;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 3em;
+    max-width: 500px;
+    margin: 0 0 100px;
+  }
+}

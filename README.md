@@ -1,20 +1,21 @@
 # Кто ты?
 
-Это репозиторий для проекта чата под названием "Кто ты?". 
+Это репозиторий для проекта чата под названием "Кто ты?".
 
 ## Уже реализовано:
 
 - Нарисованы страницы: ошибка 404, ошибка 500, входная страница, авторизация, регистрация, лента чатов, окно настроек.
-- Страница со списком чатов и лентой пока находится в виде заглушки.
-- Настроен Express-сервер, который раздаёт статику на порту 3000.
-
-## Сборка проекта
-
-Сборка проекта осуществляется через Vite. В качестве препроцессора используется Sass с именованием по БЭМ. Шаблонизатором является Pug.
+- Добавлен компонентный подход в проект, используется реализация блока (Block) и Event Bus. Проект разделен на папки с компонентами и страницами.
+- Добавлена сборка данных из формы. В console.log выводится объект со всеми заполненными полями формы.
+- Добавлена валидация на все формы. Валидация работает по blur-событиям и второй раз проверяется при нажатии на submit.
+- Генерация страниц происходит на стороне клиента.
+- Структура проекта разбита на папки единым образом, настроены правильные экспорты и импорты, декомпозиция и уменьшение связности.
+- Проверено, что приложение соответствует шаблону MVC.
 
 ## Установка и запуск проекта
 
 Чтобы установить проект, выполните следующие команды:
+
 
 ```
 npm install
@@ -32,6 +33,18 @@ npm run dev
 npm run start
 ```
 
+Для проверки на ESLint:
+
+```
+npm run lint
+```
+
+Для проверки на StyleLint:
+
+```
+npm run stylelint
+```
+
 ## Ссылки
 
 Вы можете посмотреть сайт на Netlify по следующей ссылке: [https://deploy--ubiquitous-semifreddo-ddd596.netlify.app/](https://deploy--ubiquitous-semifreddo-ddd596.netlify.app/)
@@ -47,10 +60,22 @@ npm run start
 После локального запуска сервера вы можете просмотреть все страницы по следующим адресам:
 
 - Основная страница: [http://localhost:3000/](http://localhost:3000/)
-- Страница входа: [http://localhost:3000/src/pages/login/login.html](http://localhost:3000/src/pages/login/login.html)
-- Страница регистрации: [http://localhost:3000/src/pages/registration/registration.html](http://localhost:3000/src/pages/registration/registration.html)
-- Страница ошибки 404: [http://localhost:3000/src/pages/errors/error_404/error_404.html](http://localhost:3000/src/pages/errors/error_404/error_404.html)
-- Страница ошибки 500: [http://localhost:3000/src/pages/errors/error_500/error_500.html](http://localhost:3000/src/pages/errors/error_500/error_500.html)
-- Страница настроек: [http://localhost:3000/src/pages/settings/settings.html](http://localhost:3000/src/pages/settings/settings.html)
+- Страница входа: [http://localhost:3000/login](http://localhost:3000/login)
+- Страница регистрации: [http://localhost:3000/register](http://localhost:3000/register)
+- Страница ошибки 404: [http://localhost:3000/404](http://localhost:3000/404)
+- Страница ошибки 500: [http://localhost:3000/500](http://localhost:3000/500)
+- Страница настроек: [http://localhost:3000/settings](http://localhost:3000/settings)
 
 Пожалуйста, обратите внимание, что страницы могут быть недоступны, если сервер не запущен.
+
+## Используемые инструменты
+
+- TypeScript
+- ESLint
+- Scss
+- Stylelint
+- Express
+- Vite
+- uuid
+- Terser
+- Handlebars
